@@ -23,7 +23,7 @@ data "aws_ami" "rhel8" {
 # --- 1. Ansible Control Node ---
 resource "aws_instance" "control" {
   ami                    = data.aws_ami.rhel8.id
-  instance_type          = "t3.medium"
+  instance_type          = "t2.medium"
   subnet_id              = var.subnet_id
   key_name               = var.AWS_SSH_KEY
   vpc_security_group_ids = [var.security_group]
@@ -85,7 +85,7 @@ resource "aws_instance" "control" {
 resource "aws_instance" "managed" {
   count                  = 3
   ami                    = data.aws_ami.rhel8.id
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   subnet_id              = var.subnet_id
   key_name               = var.AWS_SSH_KEY
   vpc_security_group_ids = [var.security_group]
@@ -133,7 +133,7 @@ resource "aws_instance" "managed" {
 # --- 3. Database Node (ansible-db) with Extra Disk ---
 resource "aws_instance" "db_node" {
   ami                    = data.aws_ami.rhel8.id
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   subnet_id              = var.subnet_id
   key_name               = var.AWS_SSH_KEY
   vpc_security_group_ids = [var.security_group]
