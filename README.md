@@ -8,11 +8,11 @@ The infrastructure provisions the following resources in a private VPC:
 
 | Hostname | DNS Name | Role | Hardware Specs | 
 | ----- | ----- | ----- | ----- | 
-| **ansible-control** | `ansible-control.hyfertechsolutions.com` | Control Node | t3.medium | 
-| **ansible-node1** | `ansible-node1.hyfertechsolutions.com` | Managed Host | t3.micro | 
-| **ansible-node2** | `ansible-node2.hyfertechsolutions.com` | Managed Host | t3.micro | 
-| **ansible-node3** | `ansible-node3.hyfertechsolutions.com` | Managed Host | t3.micro | 
-| **ansible-db** | `ansible-db.hyfertechsolutions.com` | Database Host | t3.micro + **1GB Extra Disk** | 
+| **ansible-control** | `ansible-control.hyfertechsolutions.com` | Control Node | t2.medium | 
+| **ansible-node1** | `ansible-node1.hyfertechsolutions.com` | Managed Host | t2.micro | 
+| **ansible-node2** | `ansible-node2.hyfertechsolutions.com` | Managed Host | t2.micro | 
+| **ansible-node3** | `ansible-node3.hyfertechsolutions.com` | Managed Host | t2.micro | 
+| **ansible-db** | `ansible-db.hyfertechsolutions.com` | Database Host | t2.micro + **1GB Extra Disk** | 
 
 ### Key Features
 * **Networking:** Custom VPC with a private Route53 Hosted Zone (`hyfertechsolutions.com`) and DHCP Options to ensure valid Forward and Reverse DNS resolution.
