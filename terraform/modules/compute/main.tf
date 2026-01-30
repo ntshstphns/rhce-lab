@@ -179,7 +179,7 @@ resource "aws_instance" "db_node" {
 }
 
 resource "aws_ebs_volume" "secondary_disk" {
-  availability_zone = "us-east-1a"
+  availability_zone = "us-east-2a"
   size              = 1
   tags = { Name = "ansible-db-secondary" }
 }
